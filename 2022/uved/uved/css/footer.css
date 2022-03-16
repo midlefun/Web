@@ -62,12 +62,6 @@
     box-shadow: 0 0 20px 5px rgba(163, 173, 178, 0.5);
 }
 
-.icon__info {
-    width: 45px;
-    height: 45px;
-    transform: translate(23px, 2px);
-    fill: #eeeeee;
-}
 
 .alerts .alert.alert-info .close {
     color: #A3ADB2;
@@ -130,6 +124,27 @@
 }
 
 
+.icon__svg {
+    width: 45px;
+    height: 45px;
+    fill: #eeeeee;
+}
+
+.icon__svg--info {
+    transform: translate(23px, 2px);
+}
+
+.icon__svg--success {
+    transform: translate(26px, 2px);
+}
+
+.icon__svg--danger {
+    transform: translate(23px, 2px);
+}
+
+.icon__svg--warning {
+    transform: translate(24px, 2px);
+}
 
 
 
