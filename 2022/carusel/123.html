@@ -33,13 +33,14 @@
         .swiper {
             width: 90%;
             height: 20%;
+            position: unset;
         }
 
         .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: #fff;
-
+            min-height: 100px;
             /* Center slide text vertically */
             display: -webkit-box;
             display: -ms-flexbox;
@@ -53,107 +54,117 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
-        }
 
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .cart {
-  width: 180px;
-  background-color: #fff;
-}
+            width: 180px;
+            background-color: #fff;
+        }
 
-.cart:not(:first-child) {
-  margin-left: 20px;
-}
+        .cart:not(:first-child) {
+            margin-left: 20px;
+        }
 
-img {
-  display: inline-block;
-  max-width: 150px;
-  object-fit: cover;
-}
+        img {
+            display: inline-block;
+            max-width: 150px;
+            object-fit: cover;
+        }
 
-.description {
-  font-size: 14px;
-  text-align: left;
-  width: 90%;
-  margin: 20px auto;
-}
+        .description {
+            font-size: 14px;
+            text-align: left;
+            width: 90%;
+            margin: 20px auto;
+        }
 
-.price {
-  margin: 20px auto;
-}
+        .price {
+            margin: 20px auto;
+        }
 
-.button {
-  margin: 20px auto;
-}
+        .button {
+            margin: 20px auto;
+        }
 
-.button button {
-  border: none;
-  outline: none;
-  display: inline-block;
-  padding: 10px 20px;
-  background: #66c05d;
-  border-radius: 30px;
-  transition: scale 0.1s ease-in;
-  color: #fff;
-}
+        .button button {
+            border: none;
+            outline: none;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #66c05d;
+            border-radius: 30px;
+            transition: scale 0.1s ease-in;
+            color: #fff;
+        }
 
-.button:hover button {
-  transform: scale(1.1);
-  background-color: #48983e;
-}
+        .button:hover button {
+            transform: scale(1.1);
+            background-color: #48983e;
+        }
 
-.swiper-button-prev, .swiper-button-next {
-    display: block;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    background-color: rgba(224, 224, 224, 0.7);
-    background-image: url('/images/slider/navigation-arrow.svg');
-    background-repeat: no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain;
-}
+        .swiper-button-prev, .swiper-button-next {
+            /*display: block;*/
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            z-index: 10;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            background-color: rgba(224, 224, 224, 0.7);
+            /*background-image: url('/images/slider/navigation-arrow.svg');*/
+            background-repeat: no-repeat;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+        /*@media screen (max-width: 411px){*/
+
+        /*}*/
+
+        .swipe {
+            position: relative;
+            margin-top: 20px;
+            min-height: 120px;
+        }
+
+        .swiper-pagination {
+            bottom: 0 !important;
+        }
     </style>
 </head>
 
 <body>
 <!-- Swiper -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="cart">
-                <div class="img">
-                    <img src="https://source.unsplash.com/ddLiNMqWAOM/1200x400">
-                </div>
-                <div class="description">Описание</div>
-                <div class="price">123</div>
-                <div class="button">
-                    <button type="button"> Купить</button>
-                </div>
-            </div>
+<div class="swipe">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!--            <div class="swiper-slide">-->
+            <!--                <div class="cart">-->
+            <!--                    <div class="img">-->
+            <!--                        <img src="https://source.unsplash.com/ddLiNMqWAOM/1200x400">-->
+            <!--                    </div>-->
+            <!--                    <div class="description">Описание</div>-->
+            <!--                    <div class="price">123</div>-->
+            <!--                    <div class="button">-->
+            <!--                        <button type="button"> Купить</button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <div class="swiper-slide">Тапочки</div>
+            <div class="swiper-slide">Галоши</div>
+            <div class="swiper-slide">Шлепанцы</div>
+            <div class="swiper-slide">Сапоги</div>
+            <div class="swiper-slide">Кроксы</div>
+            <div class="swiper-slide">Кроссовки</div>
+            <div class="swiper-slide">Сланцы</div>
+            <div class="swiper-slide">Кеды</div>
+            <div class="swiper-slide">Сабо</div>
         </div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
 </div>
 
 <!-- Swiper JS -->
@@ -162,7 +173,7 @@ img {
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
+        slidesPerView: 2,
         spaceBetween: 30,
         slidesPerGroup: 1,
         loop: true,
@@ -170,23 +181,31 @@ img {
         pagination: {
             el: ".swiper-pagination",
             clickable: true
+
         },
         navigation: {
             nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
+            prevEl: ".swiper-button-prev",
+            hiddenClass: ".swiper-button-hidden",
+
         }
         ,
         breakpoints: {// настройки для разных разрешений
+            545: {
+                slidesPerView: 3,
+                spaceBetween: 8,
+            },
+
             768: {
-                slidesPerView: 'auto',
-                spaceBetween: 8
+                slidesPerView: 4,
+                spaceBetween: 8,
             },
             991: {
-                slidesPerView: 2,
+                slidesPerView: 5,
                 spaceBetween: 30
             },
             1192: {
-                slidesPerView: 3,
+                slidesPerView: 6,
                 spaceBetween: 20
             }
         }
