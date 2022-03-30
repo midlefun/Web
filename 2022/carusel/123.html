@@ -111,16 +111,19 @@
             z-index: 10;
             cursor: pointer;
             position: absolute;
-            top: 50%;
+            top: 40px;
             background-color: rgba(224, 224, 224, 0.7);
             /*background-image: url('/images/slider/navigation-arrow.svg');*/
             background-repeat: no-repeat;
             -webkit-background-size: contain;
             background-size: contain;
         }
-        /*@media screen (max-width: 411px){*/
 
-        /*}*/
+        @media (max-width: 645px) {
+            .swiper-button-prev, .swiper-button-next {
+                display: none;
+            }
+        }
 
         .swipe {
             position: relative;
@@ -129,8 +132,29 @@
         }
 
         .swiper-pagination {
-            bottom: 0 !important;
+            bottom: 0;
+            position: inherit;
         }
+
+        .hreff {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            justify-content: center;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .swiper--bottom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .swiper--bottom--href {
+            text-align: end;
+        }
+
     </style>
 </head>
 
@@ -151,19 +175,23 @@
             <!--                    </div>-->
             <!--                </div>-->
             <!--            </div>-->
-            <div class="swiper-slide">Тапочки</div>
-            <div class="swiper-slide">Галоши</div>
-            <div class="swiper-slide">Шлепанцы</div>
-            <div class="swiper-slide">Сапоги</div>
-            <div class="swiper-slide">Кроксы</div>
-            <div class="swiper-slide">Кроссовки</div>
-            <div class="swiper-slide">Сланцы</div>
-            <div class="swiper-slide">Кеды</div>
-            <div class="swiper-slide">Сабо</div>
+            <div class="swiper-slide"><a href="" class="hreff">Тапочки</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Галоши</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Шлепанцы</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Сапоги</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Кроксы</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Кроссовки</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Сланцы</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Кеды</a></div>
+            <div class="swiper-slide"><a href="" class="hreff">Сабо</a></div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper--bottom">
+            <div class="swiper-pagination"></div>
+            <div class="swiper--bottom--href">Смотреть все ---></div>
+        </div>
+
     </div>
 </div>
 
