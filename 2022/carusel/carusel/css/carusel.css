@@ -124,7 +124,7 @@ body {
 }
 
 .hits-element {
-    margin: 0 20px;
+    /*margin: 0 20px;*/
 }
 
 .hits-element--wrapper {
@@ -134,7 +134,7 @@ body {
     height: 365px;
     overflow: hidden;
     background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-    width: 200px;
+    width: 100%;
     /*padding: 12px;*/
     transition: all 0.2s ease 0s;
     color: rgb(0, 0, 0);
@@ -151,7 +151,7 @@ body {
 }
 
 .hits-element--top__img {
-    min-height: 200px;
+    /*min-height: 200px;*/
     height: 100%;
     width: 100%;
 }
@@ -254,6 +254,11 @@ body {
     box-sizing: border-box;
 }
 
+@media (max-width: 500px){
+    span{
+        font-size: 12px;
+    }
+}
 .seasons {
     margin-top: 40px;
 }
@@ -272,18 +277,51 @@ body {
     margin-top: 20px;
     display: grid;
     gap: 20px;
-    height: 200px;
-    justify-items: stretch;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    max-height: 200px;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    /*grid-template-rows: repeat(2, 1fr);*/
     grid-template-areas:
-            "s w"
-            "d-s a-s";
+            "s w d-s a-s"
+
 }
 
 .seasons--wrapper--container--element {
     background-color: #3498db;
-    border: 1px solid;
+    display: flex;
+    height: 75px;
+    border-radius: 40px;
+    width: 100%;
+
+}
+
+
+@media (max-width: 840px) {
+    .seasons--wrapper--container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "s w"
+            "d-s a-s"
+    }
+
+    .seasons--wrapper--container--element {
+
+    }
+}
+
+
+.seasons--wrapper--container--element__text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    color: #ffffff;
+}
+
+@media (max-width: 410px) {
+    .seasons--wrapper--container--element__text{
+        font-size: 15px;
+    }
 
 }
 
