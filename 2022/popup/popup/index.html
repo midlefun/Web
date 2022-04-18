@@ -2,132 +2,52 @@
 <html lang="ru">
 
 <head>
-
-    <title>футер</title>
-    <link rel="stylesheet" href="css/footer.css">
+    <title>popup</title>
+    <link rel="stylesheet" href="css/popup.css">
     <meta http-equiv="Content-type" content="text/html;charset=utf-8 width=device-width, initial-scale=1.0"/>
     <meta http-equiv="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="js/uved.js"></script>
-
+    <script src="js/popup.js"></script>
 </head>
 <body>
+<div class="wrapper"><!--класс для работы попапа-->
+    <div class="header lock-padding"> <!--класс для блокировки отсупа-->
 
-
-<header>
-    <div class="alerts">
-
-        <div class="alert alert-info animated bounceInRight">
-            <div class="icon pull-left">
-                <div class="icon__svg icon__svg--info">
-                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16,12a2,2,0,1,1,2-2A2,2,0,0,1,16,12Zm0-2Z"/>
-                        <path d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"/>
-                        <path d="M16,24a2,2,0,0,1-2-2V16a2,2,0,0,1,4,0v6A2,2,0,0,1,16,24Zm0-8v0Z"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="copy">
-                <h4>Information</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-            </div>
-            <a class="close">
-                <div class="close__icon close__icon--info">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="0 0 612.043 612.043">
-                        <path d="M397.503,306.011l195.577-195.577c25.27-25.269,25.27-66.213,0-91.482c-25.269-25.269-66.213-25.269-91.481,0
-				L306.022,214.551L110.445,18.974c-25.269-25.269-66.213-25.269-91.482,0s-25.269,66.213,0,91.482L214.54,306.033L18.963,501.61
-				c-25.269,25.269-25.269,66.213,0,91.481c25.269,25.27,66.213,25.27,91.482,0l195.577-195.576l195.577,195.576
-				c25.269,25.27,66.213,25.27,91.481,0c25.27-25.269,25.27-66.213,0-91.481L397.503,306.011z"/>
-                    </svg>
-                </div>
-            </a>
-        </div>
-        <div class="alert alert-success animated bounceInRight">
-            <div class="icon pull-left">
-                <div class="icon__svg icon__svg--success">
-                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#eeeeee" d="M0 7a7 7 0 1 1 14 0A7 7 0 0 1 0 7z"/>
-                        <path fill="#a4b123" d="M13 7A6 6 0 1 0 1 7a6 6 0 0 0 12 0z"/>
-                        <path fill="#eeeeee"
-                              d="M6.278 7.697L5.045 6.464a.296.296 0 0 0-.42-.002l-.613.614a.298.298 0 0 0 .002.42l1.91 1.909a.5.5 0 0 0 .703.005l.265-.265L9.997 6.04a.291.291 0 0 0-.009-.408l-.614-.614a.29.29 0 0 0-.408-.009L6.278 7.697z"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="copy">
-                <h4>Success</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-            </div>
-            <a class="close">
-                <div class="close__icon close__icon--success">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="0 0 612.043 612.043">
-                        <path d="M397.503,306.011l195.577-195.577c25.27-25.269,25.27-66.213,0-91.482c-25.269-25.269-66.213-25.269-91.481,0
-				L306.022,214.551L110.445,18.974c-25.269-25.269-66.213-25.269-91.482,0s-25.269,66.213,0,91.482L214.54,306.033L18.963,501.61
-				c-25.269,25.269-25.269,66.213,0,91.481c25.269,25.27,66.213,25.27,91.482,0l195.577-195.576l195.577,195.576
-				c25.269,25.27,66.213,25.27,91.481,0c25.27-25.269,25.27-66.213,0-91.481L397.503,306.011z"/>
-                    </svg>
-                </div>
-            </a>
-        </div>
-        <div class="alert alert-warning animated bounceInRight">
-            <div class="icon pull-left">
-                <div class="icon__svg icon__svg--warning">
-                    <svg fill="#eeeeee" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M28,41c0,1.104-0.896,2-2,2s-2-0.896-2-2v-2 c0-1.104,0.896-2,2-2s2,0.896,2,2V41z M28,33c0,1.104-0.896,2-2,2s-2-0.896-2-2V11c0-1.104,0.896-2,2-2s2,0.896,2,2V33z"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="copy">
-                <h4>Warning</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-            </div>
-            <a class="close">
-                <div class="close__icon close__icon--warning">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="0 0 612.043 612.043">
-                        <path d="M397.503,306.011l195.577-195.577c25.27-25.269,25.27-66.213,0-91.482c-25.269-25.269-66.213-25.269-91.481,0
-				L306.022,214.551L110.445,18.974c-25.269-25.269-66.213-25.269-91.482,0s-25.269,66.213,0,91.482L214.54,306.033L18.963,501.61
-				c-25.269,25.269-25.269,66.213,0,91.481c25.269,25.27,66.213,25.27,91.482,0l195.577-195.576l195.577,195.576
-				c25.269,25.27,66.213,25.27,91.481,0c25.27-25.269,25.27-66.213,0-91.481L397.503,306.011z"/>
-                    </svg>
-                </div>
-            </a>
-        </div>
-        <div class="alert alert-danger animated bounceInRight">
-            <div class="icon pull-left">
-                <div class="icon__svg icon__svg--danger">
-                    <svg fill="#eeeeee" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m507.641,431.876l-224-384.002c-5.734-9.828-16.258-15.875-27.641-15.875-11.383,0-21.906,6.047-27.641,15.875l-224,384.002c-5.773,9.898-5.813,22.125-0.109,32.063 5.711,9.938 16.289,16.063 27.75,16.063h448.001c11.461,0 22.039-6.125 27.75-16.063 5.703-9.938 5.664-22.165-0.11-32.063zm-251.641-15.878c-17.656,0-32-14.328-32-32 0-17.672 14.344-32 32-32 17.688,0 32,14.328 32,32 0,17.671-14.312,32-32,32zm32-127.998c0,17.672-14.328,32-32,32s-32-14.328-32-32v-96c0-17.672 14.328-32 32-32s32,14.328 32,32v96z"/>
-                    </svg>
-
-                </div>
-            </div>
-            <div class="copy">
-                <h4>Something bad just happened!</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
-            </div>
-            <a class="close">
-                <div class="close__icon close__icon--danger">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="0 0 612.043 612.043">
-                        <path d="M397.503,306.011l195.577-195.577c25.27-25.269,25.27-66.213,0-91.482c-25.269-25.269-66.213-25.269-91.481,0
-				L306.022,214.551L110.445,18.974c-25.269-25.269-66.213-25.269-91.482,0s-25.269,66.213,0,91.482L214.54,306.033L18.963,501.61
-				c-25.269,25.269-25.269,66.213,0,91.481c25.269,25.27,66.213,25.27,91.482,0l195.577-195.576l195.577,195.576
-				c25.269,25.27,66.213,25.27,91.481,0c25.27-25.269,25.27-66.213,0-91.481L397.503,306.011z"/>
-                    </svg>
-                </div>
-            </a>
-        </div>
-
+        <a href="#popupF" class="popup-link header__phone">Попап</a><!-- клас для ссылки на попап -->
     </div>
 
-</header>
 
+    <div id="popupF" class="popup">
+        <!--    <a href="##" class="popup__area"></a>-->
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="##" class="popup__close close-popup">X</a> <!--Класс для закрытие попапа -->
+                <div class="popup__title"> Модальное окно 1</div>
+                <div class="popup__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius officiis quo
+                    vero! Ad at autem deleniti ex expedita, laudantium nostrum, perferendis provident quae quas
+                    reiciendis
+                    repellat ut vel, voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius
+                    officiis quo
+                    vero! Ad at autem deleniti ex expedita, laudantium nostrum, perferendis provident quae quas
+                    reiciendis
+                    repellat ut vel, voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius
+                    officiis quo
+                    vero! Ad at autem deleniti ex expedita, laudantium nostrum, perferendis provident quae quas
+                    reiciendis
+                    repellat ut vel, voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius
+                    officiis quo
+                    vero! Ad at autem deleniti ex expedita, laudantium nostrum, perferendis provident quae quas
+                    reiciendis
+                    repellat ut vel, voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius
+                    officiis quo
+                    vero! Ad at autem deleniti ex expedita, laudantium nostrum, perferendis provident quae quas
+                    reiciendis
+                    repellat ut vel, voluptatum?
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
