@@ -11,7 +11,7 @@ function popupModal() {
 
     let unlock = true;
 
-    const timeout = 800;
+    const timeout = 0;
 
     if (popupLinks.length >= 0) {
 
