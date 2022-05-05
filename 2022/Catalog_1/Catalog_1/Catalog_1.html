@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <title>футер</title>
+    <link rel="stylesheet" href="css/Catalog_1.css">
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8 width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="js/Catalog_1.js"></script>
+
+</head>
+<body>
+
+
+<script src="/static/js/catalog-function.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/static/css/catalog/catalog-style.css">
+
+<section class="section section-catalog">
+    <div class="container">
+
+        <div class="form-controls">
+            <div class="form-control__alert">
+                <H1>Не забудьте оформить заказ в корзине!!!</H1>
+            </div>
+            <div class="form-control__elements">
+                <div class="control-item form-control__filter">
+                    <button class='form-control__filter--button' type="button" name="button"><span
+                            class="form-control__filter--text">Фильтр</span></button>
+                </div>
+                <div class="control-item form-control__sort">
+
+                    <div class="select-box">
+                        <label for="select-box1" class="label select-box1"><span
+                                class="select-box--text">Сортировать по</span> </label>
+                        <select id="select-box1" class="select-box1_select" onchange="sort()">
+                            <option selected="selected" value="">------------</option>
+                            <option value="Choice 1">Новые поступления</option>
+                            <option value="Choice 2">Цена по убыванию</option>
+                            <option value="Choice 3">Цена по возрастани</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog">
+            <div class="catalog-filter">
+                <nav class="catalog-filter__content">
+                    <div class="filter__title">
+                        <h2>Фильтры</h2>
+                    </div>
+                    <div class="filter__close">
+                        <span class="close"></span>
+                    </div>
+                    <ul class="filter__list">
+                        <li class="filter__element filter-parent-item">
+                            <div class="filter__panel">
+                                <p class="filter__panel--text">Пол<i class="pointer"></i></p>
+                            </div>
+                        </li>
+                        <li class="filter__element filter-parent-item">
+                            <div class="filter__panel">
+                                <p class="filter__panel--text">Сезон<i class="pointer"></i></p>
+                            </div>
+                        </li>
+                        <li class="filter__element filter-parent-item">
+                            <div class="filter__panel">
+                                <p class="filter__panel--text">Фасон<i class="pointer"></i></p>
+                            </div>
+                        </li>
+                        <li class="filter__element filter-parent-item">
+                            <div class="filter__panel">
+                                <p class="filter__panel--text">Производитель<i class="pointer"></i></p>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <div class="filter__footer">
+                        <form action="https://botinki23.ru/catalog/" method="post">
+                            <input name="order" style="display: none" value="">
+                            <button class="btn button-submit" type="button" onclick="filters()">ПРИМЕНИТЬ</button>
+                            <button class="btn button-reset" type="submit">СБРОСИТЬ ВСЕ</button>
+                        </form>
+                    </div>
+
+                </nav>
+            </div>
+            <div class="catalog-content">
+
+                <div class="catalog__сollection">
+
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/00a2802c-0de0-4fdb-8e95-ebf04ab3e019NEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/1-30(Камуфляж)NEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/0fa37636-d924-4bcd-b473-caffd557ad3dNEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/0f561f8c-f9dd-4ca2-9b7d-456bb5f3ca0eNEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/1b450da1-f4b0-48f5-a26a-0baafeb6462cNEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/1c60cd0e-1cbf-47d5-be0f-fa1f3cd8dd75NEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/1.2У(Черные)NEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__item">
+                        <div class="product catalog__product">
+                            <div class="img__wrapper">
+                                <img id="pic_{{ item.id }}"
+                                     src="https://botinki23.ru/media/test/200X288/01Ж(Зеленые)NEw.webp"
+                                     alt="" class="product__img">
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title"><a class="product__title--href"
+                                                              href="https://botinki23.ru/admin/Warehouses/products/{{ item.id }}/change/">Галоши
+                                    женские</a>
+                                </h3>
+
+                                <div class="colors">
+                                    <button type="button" name="color" class="button-color"
+                                            title="{{ color.0 }}"
+                                            onclick="change_add({{ item.id }}, {{ color.1 }}, '{{ color.2 }}')">{{
+                                        color.0 }}
+                                    </button>
+                                </div>
+                                <ul class="product__descriprion description">
+                                    <li class="description__element">
+                                        <span id="price_shoes_{{ item.id }}">234</span> <span
+                                            class="product__currency">₽</span> за
+                                        пару
+                                    </li>
+                                    <li class="description__element">
+                                        За
+                                        короб:
+                                        <div></div>
+                                        <span
+                                                class="product__currency">2340₽</span>
+                                        /<span id="package_{{ item.id }}">10</span> пар
+                                    </li>
+                                    <li class="description__element">
+                                        Размерный ряд:
+                                        <div id="change_{{ item.id }}">36-41</div>
+                                    </li>
+                                    <li class="description__element">
+                                        Артикул: 002-1
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="product__footer">
+                                <div class="product__sizes">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_-_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '-')">-
+                                    </button>
+                                    <input type="number" min="0" name="" id="amount_{{ item.id }}"
+                                           class="product__input" onchange="calc_on_input('{{ item.id }}')"
+                                           value="0">
+                                    <button class="product__size" type="button"
+                                            id="calculate_amount_+_{{ item.id }}"
+                                            onclick="calculate_amount('{{ item.id }}', '+')">+
+                                    </button>
+                                </div>
+                                <div class="product__bottom">
+                                    <div class="product__price">
+                                                <span class="product__price-value"
+                                                      id="price_value_{{ item.id }}"></span>
+                                    </div>
+                                    <button class="btn product__btn" type="button" id="button_{{ item.id }}"
+                                            onclick="add_to_basket({{ item.id }})">В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+</body>
+</html>
+
