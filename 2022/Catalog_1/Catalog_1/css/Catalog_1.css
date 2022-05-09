@@ -318,6 +318,7 @@ input[type=number] {
     padding: 0 20px;
     max-width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 .section {
@@ -392,7 +393,12 @@ input:checked + span {
 .catalog__item {
     width: 20%;
     padding: 5px;
-    position: relative;
+    /*position: relative;*/
+}
+
+.catalog__item:hover {
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 .product {
@@ -416,7 +422,6 @@ input:checked + span {
     width: 90%;
     max-height: 200px;
 }
-
 
 .product__title {
     margin: 0 0 15px;
@@ -668,7 +673,7 @@ input:checked + span {
     }
 }
 
-@media (min-width: 845px){
+@media (min-width: 845px) {
 
     .form-control__filter {
         visibility: hidden;
@@ -812,3 +817,18 @@ input:checked + span {
 .close:after {
     transform: rotate(-45deg);
 }
+
+.img--open {
+    transform: scale(2);
+    position: fixed;
+    width: auto;
+    top: 40vh;
+    left: 50vw;
+}
+
+.body--lock{
+    overflow: hidden;
+    pointer-events: none;
+}
+
+

@@ -16,95 +16,127 @@
 
 <div class="wrapper">
     <div class="content">
-        <div class="content__gallery container">
-            <div class="gallery">
 
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media/test/1/i02_0aebc7ea-f40a-4b2f-bb5e-93f61eb82125.jpg"
+        <style>
+
+            /*удаление стрелочки у инпута при наличии даталиста*/
+            [list]::-webkit-calendar-picker-indicator {
+                opacity: 0;
+                display: none; /* remove default arrow */
+            }
+
+            /*добавление стрелочки у даталиста на всех устройствах*/
+            .myarrow:after {
+                content: url(https://i.stack.imgur.com/i9WFO.png);
+                margin-left: -20px;
+                padding: .1em;
+                pointer-events: none;
+            }
+
+            input {
+                border: 1px solid #ccc;
+            }
+        </style>
+
+        <input name="anrede"
+               list="anrede" placeholder="12"
+               onmouseover="focus();"
+               onmousedown="value = '';"
+               onmouseup="value = old;"/>
+
+        <datalist id="anrede">
+            <option value="Herr" selected></option>
+            <option value="Frau"></option>
+            <option value="Fraulein"></option>
+        </datalist>
+
+
+        <span class="myarrow"><input list="browsers" name="browser" id="#show-suggestions"></span>
+        <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Opera"></option>
+            <option value="Safari"></option>
+        </datalist>
+
+        <form class="form" autocomplete=off action="{{ url }}" method="POST" id="form">
+
+
+    </div>
+    </form>
+
+
+    <div class="content__gallery container">
+        <div class="gallery">
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/00a2802c-0de0-4fdb-8e95-ebf04ab3e019NEw.webp"
                          class="gallery__img"
                          alt="Image 2">
                 </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
-                <a href="#popupF" class="popup-link gallery__item">
-                    <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
-                         alt="Image 2">
-                </a>
+                <div class="item__information">
 
-
+                </div>
             </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/1-30(Камуфляж)NEw.webp" class="gallery__img"
+                         alt="Image 2">
+                </a>
+                <div class="item__information">
+
+                </div>
+            </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/0fa37636-d924-4bcd-b473-caffd557ad3dNEw.webp"
+                         class="gallery__img"
+                         alt="Image 2">
+                </a>
+            </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/0f561f8c-f9dd-4ca2-9b7d-456bb5f3ca0eNEw.webp"
+                         class="gallery__img"
+                         alt="Image 2">
+                </a>
+            </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/1b450da1-f4b0-48f5-a26a-0baafeb6462cNEw.webp"
+                         class="gallery__img"
+                         alt="Image 2">
+                </a>
+            </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/1c60cd0e-1cbf-47d5-be0f-fa1f3cd8dd75NEw.webp"
+                         class="gallery__img"
+                         alt="Image 2">
+                </a>
+            </div>
+
+            <div class="gallery__item">
+                <a href="#popupF" class="popup-link gallery__link">
+                    <img src="https://botinki23.ru/media/test/200X288/1.2У(Черные)NEw.webp"
+                         class="gallery__img"
+                         alt="Image 2">
+                </a>
+            </div>
+
         </div>
+        <button id="btn1">1</button>
+        <button id="btn2">2</button>
+        <button id="btn3">3</button>
     </div>
+</div>
 </div>
 
 <div id="popupF" class="popup">
@@ -114,7 +146,8 @@
             <a href="##" class="popup__close close-popup">X</a> <!--Класс для закрытие попапа -->
             <div class="popup__title">DF-18</div>
             <div class="popup__img">
-                <img src="https://botinki23.ru/media//test/1/i01_B-10Серебряные.jpg" class="gallery__img"
+                <img src="https://botinki23.ru/media/test/200X288/00a2802c-0de0-4fdb-8e95-ebf04ab3e019NEw.webp"
+                     class="gallery__img"
                      alt="Image 2">
             </div>
             <div class="popup__characteristics">
@@ -123,9 +156,7 @@
                 <div class="price">Цена за пару 55р</div>
                 <div class="price">Цена за короб 550р</div>
                 <div class="sizes">Размерный ряд: 36-41</div>
-                <div id="123" class="table1-cell table1-cell__count-package">
-                    <p style="visibility: hidden"
-                       id="package_{{ item.id }}">{{ item.product.product.package }}</p>
+                <div class="popup__footer">
                     <div class="product__sizes">
                         <button id="minusButton" class="product__size" type="button">
                             -
@@ -137,9 +168,14 @@
                             +
                         </button>
                     </div>
-
+                    <div class="product__bottom">
+                        <button class="product__btn">
+                            В корзину
+                        </button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
