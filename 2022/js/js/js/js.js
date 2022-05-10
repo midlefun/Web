@@ -75,6 +75,6 @@ console.log(array.multBy(4))
 
 function createCalcFunction() {
     return function () {
-        
+
     }    
 }
